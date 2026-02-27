@@ -19,6 +19,7 @@ def _configure_logging() -> None:
             logging.FileHandler("execution.log"),
         ],
     )
+    logging.getLogger("LiteLLM").setLevel(logging.CRITICAL)
 
 
 def _collect_inputs() -> dict:

@@ -822,3 +822,17 @@ Traceback (most recent call last):
     raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
 ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
 2026-02-27 10:57:45,785 | INFO | travel_planner_crewai.main | Execution completed successfully
+2026-02-27 11:45:23,571 | INFO | travel_planner_crewai.main | Execution started
+2026-02-27 11:46:10,002 | INFO | travel_planner_crewai.main | Inputs received | destination=India | travel_dates=2026-04-10 to 2026-04-15 | budget=BDT 30000
+2026-02-27 11:46:10,009 | INFO | travel_planner_crewai.crew | Initializing destination_researcher
+2026-02-27 11:46:10,013 | INFO | travel_planner_crewai.crew | Initializing budget_planner
+2026-02-27 11:46:10,014 | INFO | travel_planner_crewai.crew | Initializing itinerary_designer
+2026-02-27 11:46:10,015 | INFO | travel_planner_crewai.crew | Initializing validation_agent
+2026-02-27 11:46:10,016 | INFO | travel_planner_crewai.crew | Creating destination_research_task
+2026-02-27 11:46:10,016 | INFO | travel_planner_crewai.crew | Creating budget_planning_task
+2026-02-27 11:46:10,017 | INFO | travel_planner_crewai.crew | Creating itinerary_design_task
+2026-02-27 11:46:10,017 | INFO | travel_planner_crewai.crew | Creating validation_task
+2026-02-27 11:46:10,017 | INFO | travel_planner_crewai.crew | Creating TravelPlannerCrewai with sequential process
+2026-02-27 11:46:11,579 | INFO | travel_planner_crewai.tools.custom_tool | Serper search started | query=India destination highlights and travel logistics 2026-04-10 to 2026-04-15
+2026-02-27 11:46:13,090 | INFO | travel_planner_crewai.tools.custom_tool | Serper search finished
+2026-02-27 11:46:20,406 | INFO | travel_planner_crewai.main | Execution completed successfully

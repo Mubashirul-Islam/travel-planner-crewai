@@ -48,7 +48,7 @@ class SerperTravelSearchTool(BaseTool):
 
     def _run(self, query: str) -> str:
         logger.info("Serper search started | query=%s", query)
-        result = SerperDevTool().run(query)
+        result = SerperDevTool()._run(search_query=query)
         logger.info("Serper search finished")
         return str(result)
 
