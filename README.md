@@ -11,15 +11,12 @@ This project implements a CrewAI-based travel planner with the required architec
 
 ## Input and Output
 
-### Required input
+### User input
 
 - Destination
 - Travel Dates
 - Budget
-
-### Optional input
-
-- Preferences
+- Preferences (Optional)
 
 ### Output sections
 
@@ -29,9 +26,36 @@ This project implements a CrewAI-based travel planner with the required architec
 4. Day-wise Itinerary
 5. Validation Summary
 
+## Project Structure
+
+```
+travel-planner-crewai/
+├── src/
+│   └── travel_planner_crewai/
+│       ├── __init__.py
+│       ├── crew.py
+│       ├── main.py
+│       ├── config/
+│       │   ├── agents.yaml
+│       │   └── tasks.yaml
+│       └── tools/
+│           ├── __init__.py
+│           └── custom_tool.py
+├── pyproject.toml
+├── report.md
+└── README.md
+```
+
 ## Setup
 
 Python requirement: `>=3.10,<3.14`
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Mubashirul-Islam/travel-planner-crewai.git
+cd travel-planner-crewai
+```
 
 Install dependencies:
 
@@ -49,31 +73,22 @@ export GROQ_MODEL="llama-3.3-70b-versatile"  # optional
 
 ## Run
 
-### Interactive mode
-
 ```bash
 crewai run
 ```
 
 The CLI prompts for destination, travel dates, budget, and optional preferences.
 
-### Non-interactive mode
+## Analysis
 
-```bash
-crewai run --destination "Tokyo" --travel-dates "2026-05-10 to 2026-05-15" --budget "USD 2200" --preferences "Food, museums, walkable routes"
-```
+**Why multi-agent?** Each agent focuses on a single responsibility (research, budgeting, itinerary design, validation) with its own tools and prompt. This improves accuracy compared to a single LLM call and keeps each context window small and task-specific.
 
-or via environment variables:
+**What if Serper returns incorrect data?** Serper results are not guaranteed to be accurate. The Validation Agent flags unverifiable claims as assumptions, but incorrect data can still propagate; users should verify critical details before travel.
 
-```bash
-export TRAVEL_DESTINATION="Tokyo"
-export TRAVEL_DATES="2026-05-10 to 2026-05-15"
-export TRAVEL_BUDGET="USD 2200"
-export TRAVEL_PREFERENCES="Food, museums, walkable routes"
-crewai run
-```
+**What if budget is unrealistic?** The Budget Planner explicitly flags any shortfall rather than forcing a plan to fit. The Validation Agent surfaces budget warnings in the final summary.
 
-## Notes
+**Hallucination risks?** LLMs can fabricate plausible details. Grounding via live Serper results and a dedicated Validation Agent reduce this, but cannot eliminate it entirely. Unverified data points are marked as assumptions in the report.
 
-- No other search tool is configured besides Serper.
-- Budget estimates are expected to be sourced from researched context; unknown values are marked as assumptions.
+**Token usage?** Focused per-agent tasks reduce per-call token load, but outputs chain forward, accumulating context. The `llama-3.3-70b-versatile` 128k context window handles typical plans; very long trips may risk truncation.
+
+**Scalability?** The current design is single-user and stateless. Multi-user scaling would require isolated crew instances per request, queuing, and caching. Higher trip complexity directly increases token and Serper API usage.

@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-import argparse
 import logging
-import os
 import sys
 import warnings
 
@@ -23,28 +21,14 @@ def _configure_logging() -> None:
 
 
 def _collect_inputs() -> dict:
-    parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("--destination")
-    parser.add_argument("--travel-dates")
-    parser.add_argument("--budget")
-    parser.add_argument("--preferences")
-    args, _ = parser.parse_known_args()
-
-    destination = args.destination or os.getenv("TRAVEL_DESTINATION")
-    travel_dates = args.travel_dates or os.getenv("TRAVEL_DATES")
-    budget = args.budget or os.getenv("TRAVEL_BUDGET")
-    preferences = args.preferences or os.getenv("TRAVEL_PREFERENCES")
-
-    if sys.stdin.isatty():
-        destination = destination or input("Destination: ").strip()
-        travel_dates = travel_dates or input("Travel dates (e.g. 2026-04-10 to 2026-04-15): ").strip()
-        budget = budget or input("Budget (currency + amount): ").strip()
-        user_preferences = input("Preferences (optional, press Enter to skip): ").strip()
-        preferences = user_preferences or preferences
+    destination = input("Destination: ").strip()
+    travel_dates = input("Travel dates (e.g. 2026-04-10 to 2026-04-15): ").strip()
+    budget = input("Budget (currency + amount): ").strip()
+    preferences = input("Preferences (optional, press Enter to skip): ").strip()
 
     if not destination or not travel_dates or not budget:
         raise ValueError(
-            "Missing required travel inputs. Provide destination, travel dates, and budget via CLI args, env vars, or interactive prompts."
+            "Missing required travel inputs: destination, travel dates, and budget are required."
         )
 
     return {
