@@ -1,0 +1,25 @@
+[project]
+name = "travel_planner_crewai"
+version = "0.1.0"
+description = "travel-planner-crewai using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.9.3",
+    "litellm>=1.75.3",
+]
+
+[project.scripts]
+travel_planner_crewai = "travel_planner_crewai.main:run"
+run_crew = "travel_planner_crewai.main:run"
+train = "travel_planner_crewai.main:train"
+replay = "travel_planner_crewai.main:replay"
+test = "travel_planner_crewai.main:test"
+run_with_trigger = "travel_planner_crewai.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

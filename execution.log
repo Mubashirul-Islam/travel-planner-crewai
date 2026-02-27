@@ -1,0 +1,824 @@
+2026-02-27 10:31:02,458 | INFO | travel_planner_crewai.main | Execution started
+2026-02-27 10:31:34,259 | INFO | travel_planner_crewai.main | Inputs received | destination=India | travel_dates=2026-04-10 to 2026-04-15 | budget=Taka 50000
+2026-02-27 10:31:34,271 | INFO | travel_planner_crewai.crew | Initializing destination_researcher
+2026-02-27 10:31:34,276 | INFO | travel_planner_crewai.crew | Initializing budget_planner
+2026-02-27 10:31:34,279 | INFO | travel_planner_crewai.crew | Initializing itinerary_designer
+2026-02-27 10:31:34,281 | INFO | travel_planner_crewai.crew | Initializing validation_agent
+2026-02-27 10:31:34,283 | INFO | travel_planner_crewai.crew | Creating destination_research_task
+2026-02-27 10:31:34,283 | INFO | travel_planner_crewai.crew | Creating budget_planning_task
+2026-02-27 10:31:34,284 | INFO | travel_planner_crewai.crew | Creating itinerary_design_task
+2026-02-27 10:31:34,285 | INFO | travel_planner_crewai.crew | Creating validation_task
+2026-02-27 10:31:34,286 | INFO | travel_planner_crewai.crew | Creating TravelPlannerCrewai with sequential process
+2026-02-27 10:31:34,355 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:31:34,752 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:31:34,754 | INFO | travel_planner_crewai.tools.custom_tool | Serper search started | query=India top attractions, travel logistics, local transit options, opening times, neighborhood recommendations, and weather concerns from 2026-04-10 to 2026-04-15
+2026-02-27 10:31:34,769 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:31:34,780 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:34,790 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:36,031 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:31:36,048 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:36,056 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:36,097 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:31:38,172 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:31:38,204 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:38,211 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:38,242 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:31:42,659 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:31:42,682 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:42,701 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:42,739 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:31:47,236 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:31:47,269 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:47,324 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:31:47,370 | INFO | travel_planner_crewai.main | Execution completed successfully
+2026-02-27 10:35:39,202 | INFO | travel_planner_crewai.main | Execution started
+2026-02-27 10:36:45,861 | INFO | travel_planner_crewai.main | Inputs received | destination=japan | travel_dates=2026-04-10 to 2026-04-15 | budget=BDT 1,00,000
+2026-02-27 10:36:45,870 | INFO | travel_planner_crewai.crew | Initializing destination_researcher
+2026-02-27 10:36:45,872 | INFO | travel_planner_crewai.crew | Initializing budget_planner
+2026-02-27 10:36:45,874 | INFO | travel_planner_crewai.crew | Initializing itinerary_designer
+2026-02-27 10:36:45,875 | INFO | travel_planner_crewai.crew | Initializing validation_agent
+2026-02-27 10:36:45,875 | INFO | travel_planner_crewai.crew | Creating destination_research_task
+2026-02-27 10:36:45,876 | INFO | travel_planner_crewai.crew | Creating budget_planning_task
+2026-02-27 10:36:45,876 | INFO | travel_planner_crewai.crew | Creating itinerary_design_task
+2026-02-27 10:36:45,877 | INFO | travel_planner_crewai.crew | Creating validation_task
+2026-02-27 10:36:45,877 | INFO | travel_planner_crewai.crew | Creating TravelPlannerCrewai with sequential process
+2026-02-27 10:36:45,940 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:36:47,285 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:36:47,287 | INFO | travel_planner_crewai.tools.custom_tool | Serper search started | query=japan travel guide 2026-04-10 to 2026-04-15
+2026-02-27 10:36:47,304 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:36:47,319 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:47,329 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:48,553 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:36:48,563 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:48,582 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:48,640 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:36:49,691 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:36:49,704 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:49,711 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:49,744 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:36:52,031 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:36:52,059 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:52,076 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:52,119 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:36:55,418 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:36:55,471 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:55,508 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:36:55,536 | INFO | travel_planner_crewai.main | Execution completed successfully
+2026-02-27 10:56:55,318 | INFO | travel_planner_crewai.main | Execution started
+2026-02-27 10:57:36,387 | INFO | travel_planner_crewai.main | Inputs received | destination=Monaco | travel_dates=2026-04-10 to 2026-04-15 | budget=USD 5000
+2026-02-27 10:57:36,395 | INFO | travel_planner_crewai.crew | Initializing destination_researcher
+2026-02-27 10:57:36,397 | INFO | travel_planner_crewai.crew | Initializing budget_planner
+2026-02-27 10:57:36,398 | INFO | travel_planner_crewai.crew | Initializing itinerary_designer
+2026-02-27 10:57:36,399 | INFO | travel_planner_crewai.crew | Initializing validation_agent
+2026-02-27 10:57:36,400 | INFO | travel_planner_crewai.crew | Creating destination_research_task
+2026-02-27 10:57:36,400 | INFO | travel_planner_crewai.crew | Creating budget_planning_task
+2026-02-27 10:57:36,400 | INFO | travel_planner_crewai.crew | Creating itinerary_design_task
+2026-02-27 10:57:36,401 | INFO | travel_planner_crewai.crew | Creating validation_task
+2026-02-27 10:57:36,401 | INFO | travel_planner_crewai.crew | Creating TravelPlannerCrewai with sequential process
+2026-02-27 10:57:36,455 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:57:37,496 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:57:37,498 | INFO | travel_planner_crewai.tools.custom_tool | Serper search started | query=Monaco destination highlights and travel logistics 2026-04-10 to 2026-04-15
+2026-02-27 10:57:37,511 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:57:37,519 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:37,531 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:38,165 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:57:38,173 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:38,181 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:38,214 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:57:39,281 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:57:39,303 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:39,312 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:39,345 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:57:41,971 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:57:41,974 | INFO | travel_planner_crewai.tools.custom_tool | Serper search started | query=Monaco Grand Prix schedule 2026
+2026-02-27 10:57:41,990 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:57:41,995 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:42,007 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:43,271 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:57:43,308 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:43,329 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:43,348 | INFO | LiteLLM | 
+LiteLLM completion() model= llama-3.3-70b-versatile; provider = groq
+2026-02-27 10:57:45,654 | INFO | LiteLLM | Wrapper: Completed Call, calling success_handler
+2026-02-27 10:57:45,711 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:45,730 | ERROR | LiteLLM | Error creating standard logging object - Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 75, in <module>
+    import fastapi
+ModuleNotFoundError: No module named 'fastapi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4370, in get_standard_logging_object_payload
+    clean_metadata = StandardLoggingPayloadSetup.get_standard_logging_metadata(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 3921, in get_standard_logging_metadata
+    cold_storage_object_key = StandardLoggingPayloadSetup._generate_cold_storage_object_key(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/litellm_core_utils/litellm_logging.py", line 4109, in _generate_cold_storage_object_key
+    configured_cold_storage_logger = ColdStorageHandler._get_configured_cold_storage_custom_logger()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/spend_tracking/cold_storage_handler.py", line 67, in _get_configured_cold_storage_custom_logger
+    from litellm.proxy.proxy_server import general_settings
+  File "/home/w3e10/Downloads/travel-planner-crewai/.venv/lib/python3.12/site-packages/litellm/proxy/proxy_server.py", line 80, in <module>
+    raise ImportError(f"Missing dependency {e}. Run `pip install 'litellm[proxy]'`")
+ImportError: Missing dependency No module named 'fastapi'. Run `pip install 'litellm[proxy]'`
+2026-02-27 10:57:45,785 | INFO | travel_planner_crewai.main | Execution completed successfully
