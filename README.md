@@ -89,6 +89,6 @@ The CLI prompts for destination, travel dates, budget, and optional preferences.
 
 **Hallucination risks?** LLMs can fabricate plausible details. Grounding via live Serper results and a dedicated Validation Agent reduce this, but cannot eliminate it entirely. Unverified data points are marked as assumptions in the report.
 
-**Token usage?** Focused per-agent tasks reduce per-call token load, but outputs chain forward, accumulating context. The `llama-3.3-70b-versatile` 128k context window handles typical plans; very long trips may risk truncation.
+**Token usage?** Per-agent prompts keep each call lightweight, but context accumulates across the workflow. The `llama-3.3-70b-versatile` 128k window is enough for most trips, though very long trips may approach the limit.
 
 **Scalability?** The current design is single-user and stateless. Multi-user scaling would require isolated crew instances per request, queuing, and caching. Higher trip complexity directly increases token and Serper API usage.
